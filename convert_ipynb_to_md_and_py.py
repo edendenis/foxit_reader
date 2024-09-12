@@ -14,16 +14,15 @@
 # 
 # _This file converts all files with the name `README.ipynb` to `.md` and `.py` starting from the root folder and traversing the subfolders._
 
-# %%
-# ! pip install nbconvert
-
-
 # %% [markdown]
 # # 1. Converter um arquivo do tipo Jupyter Notebook file (`.ipynb`) para Markdown (`.md`) e Python (`.py`)
 # 
 # Para executar o código fornecido em todos os arquivos `README.ipynb` na pasta raiz e subpastas, você precisará realizar executar o código abaixo. Uma abordagem eficaz é usar o módulo `os` do Python para percorrer todos os diretórios e subdiretórios, encontrando arquivos que correspondam ao nome `README.ipynb`. A seguir, apresento um exemplo de como você pode fazer isso:
 # 
 # Esse código utiliza `os.walk()` para percorrer todos os diretórios e subdiretórios da pasta atual (indicada por '.'). Ele verifica se algum dos arquivos nos diretórios é um `README.ipynb` e, em seguida, realiza o processo de conversão para Markdown, como especificado no seu código original. O caminho completo do arquivo é usado para garantir que o arquivo correto seja convertido, independente de onde ele esteja na estrutura de pastas.
+
+# %%
+# ! pip install nbconvert
 
 # %%
 import os
@@ -70,7 +69,7 @@ for dirpath, dirnames, filenames in os.walk('.'):
                 with open(python_output_filename, 'w') as file:
                     file.write(python_code)
 
-                print(f'{full_path} was successfully converted to {markdown_output_filename} e {python_output_filename}')
+                print(f'{full_path} was successfully converted to {markdown_output_filename} and {python_output_filename}')
 
             except nbformat.reader.NotJSONError as e:
                 print(f'Error processing {full_path}: File is not valid JSON - {e}')
@@ -86,5 +85,6 @@ for dirpath, dirnames, filenames in os.walk('.'):
 # ## Referências
 # 
 # [1] OPENAI. ***Converter vários README.ipynb para .md e .py.*** Disponível em: <https://chat.openai.com/c/50f64d4d-cfe7-40ac-a8aa-27ffa4eb5a5e>. ChatGPT. Acessado em: 26/01/2024 11:35.
+# 
 
 

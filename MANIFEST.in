@@ -1,0 +1,7 @@
+include proplib/interfaces/cea/b1b2b3
+include proplib/interfaces/cea/cea
+include proplib/interfaces/cea/cea-mac
+include proplib/interfaces/cea/syntax
+include proplib/interfaces/cea/FCEA2.exe
+include proplib/interfaces/cea/thermo.lib
+include proplib/interfaces/cea/trans.lib
